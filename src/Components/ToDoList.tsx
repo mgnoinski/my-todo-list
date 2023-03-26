@@ -1,4 +1,4 @@
-import { ToDoFormComponent } from "../ToDoForm/ToDoFormComponent";
+import { ToDoFormComponent } from "./ToDoFormComponent";
 import { ToDoFormProps } from "../ToDoForm/ToDoFormProps"
 interface ToDoListProps {
     readonly toDos: ToDoFormProps[];

@@ -1,5 +1,5 @@
-import { ToDoFormProps } from "./ToDoFormProps"
-import { Button } from "../Button";
+import { ToDoFormProps } from "../ToDoForm/ToDoFormProps"
+import { Button } from "./Button";
 
 export interface ToDoComponentProps {
 	toDo: ToDoFormProps;
