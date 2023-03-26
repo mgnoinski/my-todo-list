@@ -11,11 +11,21 @@ const [toDos, setToDos] = React.useState<ToDoFormProps[]>([
     done: false
   }
 ]);
-  
+
+
+function handleDoneClick(toDo: ToDoFormProps): void {
+  const found: number = toDos.findIndex((td: ToDoFormProps):boolean => td === toDo);
+  toDos[found] = {
+    ...toDos[found],
+    done: true
+  };
+  setToDos([...toDos]);
+  console.log(toDo)
+}
 
   return (
     <div className="App">
-      <ToDoList toDos={toDos} />
+      <ToDoList toDos={toDos} onDoneClick={handleDoneClick} />
       <form>
       <p>To Do...</p>
       <input type={'text'} placeholder={"To do..."}></input><br/>

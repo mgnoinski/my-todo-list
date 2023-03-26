@@ -1,14 +1,14 @@
 import { ToDoFormComponent } from "../ToDoForm/ToDoFormComponent";
 import { ToDoFormProps } from "../ToDoForm/ToDoFormProps"
-import { App } from "../App";
 interface ToDoListProps {
-    toDos: ToDoFormProps[];
+    readonly toDos: ToDoFormProps[];
+    readonly onDoneClick:(toDo: ToDoFormProps) => void;
 }
 
 
 export function ToDoList(props: ToDoListProps):JSX.Element {
     function renderToDo(toDo: ToDoFormProps): JSX.Element {
-        return <ToDoFormComponent toDo={toDo}/>
+        return <ToDoFormComponent toDo={toDo} onDoneClick={(): void => props.onDoneClick(toDo)}/>
     }
 
 
